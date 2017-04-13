@@ -6,35 +6,28 @@
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <ListBox VerticalAlignment="Top"></ListBox>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2.5*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            
-            <TextBox Grid.Row="0" Grid.Column="0" Margin="10"></TextBox>
-            
-            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">Book</TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10">Author</TextBlock>
-            <TextBlock Grid.Row="3" Grid.Column="0" Margin="10">Abstract</TextBlock>
-            
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                <Button Width="100" Margin="10" ></Button>
-                <Button Width="100" Margin="10" ></Button>
-                <Button Width="100" Margin="10" ></Button>
-            </StackPanel>
-
-            <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"></TextBox>
-        </Grid>
+    <Grid Margin="5">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox  Name ="ListBoxAll" Grid.Row="0" Height="auto" Visibility="Collapsed"></ListBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5" >
+            <TextBox Name="IdTextBox" Margin="10,10,30,10" Width="49"></TextBox>
+            <Button x:Name="ShowInNumber" Content="Show By Number" Margin="10" Click="ShowByNumber_Click"/>
+            <Button x:Name="UpdateDescription" Content="Update Description" Margin="10"  />
+            <Button x:Name="Showall" Content="Show all" Margin="10" Click="Show_all_Click" />
+            <Button x:Name="Author" Content="Author" Margin="10" Width="56" Click="Author_Click"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="5">
+            <Label x:Name="Name" Height="30" Width="80" Margin="10" >Name</Label>
+            <TextBox Name="FirstLastNAme" Width="380" ></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="5">
+            <Label x:Name="About" Height="30" Width="80" Margin="10" >About</Label>
+            <TextBox Name="AboutIn" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="380" Height="150" ></TextBox>
+        </StackPanel>
     </Grid>
 </Window>
