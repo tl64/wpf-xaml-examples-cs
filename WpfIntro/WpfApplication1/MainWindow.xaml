@@ -7,6 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <ListBox VerticalAlignment="Top"></ListBox>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBox Grid.Row="0" Grid.Column="0" Margin="10"></TextBox>
+            
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">Book</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10">Author</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0" Margin="10">Abstract</TextBlock>
+            
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <Button Width="100" Margin="10" ></Button>
+                <Button Width="100" Margin="10" ></Button>
+                <Button Width="100" Margin="10" ></Button>
+            </StackPanel>
+
+            <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"></TextBox>
+        </Grid>
     </Grid>
 </Window>
