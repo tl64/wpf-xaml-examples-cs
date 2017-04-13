@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -92,6 +93,47 @@ namespace WpfApplication1
 
             //    reader.Close();
             //}
+        }
+
+        private void UpdateCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(IdTextBox.Text)) MessageBox.Show("Enter an ID");
+            else
+            {
+                var connection = new SqlConnection(connectionString);
+                var command = new SqlCommand();
+                if (FirstLastNAme.Text.Count(c => c == ' ') > 1)
+                {
+                    MessageBox.Show("Not a valid format");
+                    return;
+                }
+                else if (!FirstLastNAme.Text.Contains(' '))
+                {
+                    command = new SqlCommand($"update customers set fname = '{FirstLastNAme.Text}' where customerno = {IdTextBox.Text}", connection);
+                }
+                else if (FirstLastNAme.Text.Count(c => c == ' ') == 1)
+                {
+                    var split = FirstLastNAme.Text.Split(' ');
+                    command = new SqlCommand($"update customers set fname = '{split[0]}', lname = '{split[1]}' where customerno = {IdTextBox.Text}", connection);
+                }
+
+                try
+                {
+                    connection.Open();
+
+                    command.Transaction = connection.BeginTransaction();
+
+                    command.ExecuteNonQuery();
+
+                    command.Transaction.Commit();
+                    MessageBox.Show("Transaction commited");
+                }
+                catch (Exception)
+                {
+                    command.Transaction.Rollback();
+                    MessageBox.Show("transaction rolled back");
+                }
+            }
         }
     }
 }
