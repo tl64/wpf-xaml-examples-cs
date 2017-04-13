@@ -28,6 +28,7 @@ namespace WpfApplication1
             if (ListBoxAll.Items.Count != 0 && ListBoxAll.Visibility != Visibility.Collapsed)
             {
                 ListBoxAll.Visibility = Visibility.Collapsed;
+                ListBoxAll.ItemsSource = null;
                 ListBoxAll.Items.Clear();
             }
             else
