@@ -5,7 +5,9 @@
 WPF employs XAML, an XML-based language, to define and link various interface elements. WPF applications can be deployed as standalone desktop programs or hosted as an embedded object in a website. WPF aims to unify a number of common user interface elements, such as 2D/3D rendering, fixed and adaptive documents, typography, vector graphics, runtime animation, and pre-rendered media. These elements can then be linked and manipulated based on various events, user interactions, and data bindings.</p>
 <img src="https://www.synapseindia.com/UserFiles/XAML-LOGO.jpg" align="right" width="400px" height="250px"/>
 <p>Extensible Application Markup Language, or XAML (pronounced "zammel"), is an XML-based markup language developed by Microsoft. XAML is the language behind the visual presentation of an application that you develop in Microsoft Expression Blend, just as HTML is the language behind the visual presentation of a Web page. Creating an application in Expression Blend means writing XAML code, either by hand or visually by working in the Design view of Expression Blend.</p>
-```csharp
+<h3><i>Just a simple example of a XAML code</i></h3>
+
+```xaml
 <Window x:Class="BindNotControl.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -22,6 +24,7 @@ WPF employs XAML, an XML-based language, to define and link various interface el
     </Grid>
 </Window>
 ```
+
 <p>WPF uses XAML for constructing visually stunning user interfaces (UI) in markup instead of in a programming language such as C#. You can create elaborate UI documents entirely in XAML by defining elements such as controls, text, images, shapes, animation, and more. Because XAML is declarative (like HTML), it requires the addition of code if you need to add run-time logic to your application.</p>
 <hr width="100%"/>
 <h2>Keywords</h2>
